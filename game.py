@@ -69,7 +69,7 @@ class sudoku_back:
     
                 if self.rep(row+1,col+1) == False:
                     self.board[row][col] = ' '
-                    print(f'{new_number} se repite, cambie el número o la posición')
+                    print (f'{new_number} se repite, cambie el número o la posición')
                 else:
                     return True
         else:
