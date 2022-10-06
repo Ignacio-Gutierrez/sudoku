@@ -28,7 +28,7 @@ class test_sudoku(unittest.TestCase):
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '], 
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '], 
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ']])
-                                
+
     def test_agregar_numero2(self):
         sudoku = sudoku_back()
         sudoku.put_number(1, 1, 1)
@@ -42,6 +42,10 @@ class test_sudoku(unittest.TestCase):
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '], 
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '], 
                                         ['8', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ']])
+
+    def test_fila_fuera_de_rango(self):
+        sudoku = sudoku_back()
+        self.assertEqual(sudoku.put_number(10, 9, 1), None)
 
     def test_fila_equal(self):
         sudoku = sudoku_back()
