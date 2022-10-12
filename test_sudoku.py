@@ -1,4 +1,5 @@
 from game import sudoku_back
+from unittest.mock import patch
 
 import unittest
 
@@ -15,6 +16,12 @@ class test_sudoku(unittest.TestCase):
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '], 
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' '], 
                                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ']])
+
+    @patch("builtins.print")
+    def test_showboard(self, mockpatched):
+        sudoku  =  sudoku_back()
+        sudoku .show_board()
+        self.assertEqual(mockpatched.call_count, 111)
 
     def test_agregar_numero(self):
         sudoku = sudoku_back()
